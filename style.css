@@ -56,6 +56,35 @@ body {
     background-color: #357ABD;
 }
 
+.button--secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 10px 22px; /* Chỉnh lại padding cho vừa vặn */
+}
+
+.header {
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.button--secondary:hover {
+    background-color: var(--light-gray);
+}
+
+.header {
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
 .header {
     background-color: white;
     border-bottom: 1px solid var(--border-color);
@@ -78,11 +107,21 @@ body {
     color: var(--primary-color);
 }
 
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Khoảng cách giữa các mục menu */
+}
+
 .header__nav-link {
-    margin-left: 25px;
     text-decoration: none;
     color: var(--text-light);
     font-weight: 500;
+    font-size: 1rem;
+}
+
+.header__nav-button {
+    margin-left: 10px; /* Tạo khoảng cách nhỏ trước nút Đăng nhập */
 }
 
 .hero {
@@ -197,11 +236,10 @@ body {
 
 @media (max-width: 768px) {
     .section-title {
-        font-size: 1.9rem; 
+        font-size: 1.9rem;
     }
-    
     .header__nav {
-        display: none; /* hiden menu in mobile */
+        display: none;
     }
 
     /* Hero section responsive */
