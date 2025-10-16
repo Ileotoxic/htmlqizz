@@ -1,0 +1,25 @@
+const menuToggle = document.getElementById('menu-toggle');
+const dropdownMenu = document.getElementById('dropdown-menu');
+
+menuToggle.addEventListener('click', function(event) {
+    // Ngăn sự kiện click lan ra ngoài (tới window)
+    event.stopPropagation();
+    // Thêm hoặc xóa lớp 'is-open' để hiện/ẩn menu
+    dropdownMenu.classList.toggle('is-open');
+});
+
+document.addEventListener('keydown', function(event) {
+    // Nếu menu đang mở và người dùng nhấn phím Escape
+    if (dropdownMenu.classList.contains('is-open') && event.key === 'Escape') {
+        // Đóng menu lại
+        dropdownMenu.classList.remove('is-open');
+    }
+});
+
+document.addEventListener('click', function(event) {
+    // Nếu click không phải là nút menu và menu đang mở
+    if (menuToggle !== event.target && dropdownMenu.classList.contains('is-open')) {
+        // Đóng menu lại
+        dropdownMenu.classList.remove('is-open');
+    }
+});
